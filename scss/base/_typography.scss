@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as *;
+
+
+@each $fonts, $font in $fonts{
+  @each $prop, $_ in $font{
+    @font-face {
+      font-family: '#{$fonts} #{$prop}';
+      src: url('/fonts/#{$fonts}/#{$fonts}-#{$prop}/#{$fonts}-#{$prop}.woff2') format('woff2'),
+          url('/fonts/#{$fonts}/#{$fonts}-#{$prop}/#{$fonts}-#{$prop}.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+  } 
+}
+
+
+h1{
+  color: $black;
+  font-family: 'Consolas Bold';
+  font-weight: 700;
+  font-size: 4.8rem;
+  text-align: center;
+  font-style: normal;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+h2{
+  font-family: 'Consolas Regular';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.8rem;
+  color: $black;
+  @media screen and (max-width: map-get($breakpoints, small)){
+    font-family: 'Consolas Bold';
+    font-size: 2.3rem;
+  }
+}
+
+
+h3{
+  font-family: 'Consolas Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 100%;
+  color: $third-dark-blue;
+}

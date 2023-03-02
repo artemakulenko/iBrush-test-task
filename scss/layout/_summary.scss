@@ -1,0 +1,30 @@
+@use '../abstracts/variables' as *;
+
+.summary{
+  margin-bottom: 29px;
+  &__grid{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  &__desc{
+    font-family: 'Arial';
+    font-size: 16px;
+    line-height: 24px;
+    color: $third-dark-blue;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, small)){
+    margin-bottom: 0;
+    &__grid{
+      gap: 21px;
+    }
+
+    &__title{
+      font-size: 2.1rem;
+    }
+    &__desc{
+      font-size: 1.4rem;
+    }
+  }
+}

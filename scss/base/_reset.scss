@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as *;
+@use '../base/typography' as *;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+
+html{
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.mobile-only{
+  display: none;
+  @media screen and (max-width: map-get($breakpoints, small)) {
+    display: initial;
+  }
+}
+
+.desktop-only{
+  display: initial;
+  @media screen and (max-width: map-get($breakpoints, small)) {
+    display: none;
+  }
+}
+
+img{
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: contain;
+}

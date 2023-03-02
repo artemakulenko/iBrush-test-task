@@ -1,0 +1,58 @@
+@use '../abstracts/variables' as *;
+
+
+.feedback{
+  margin-top: 29px;
+  padding: 40px 0;
+  &__title{
+    margin-bottom: 10px;
+  }
+  
+
+
+  &__stars{
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+    margin-bottom: 30px;
+    &[data-total-value='1'] .feedback__star:nth-child(n+5),
+    &[data-total-value='2'] .feedback__star:nth-child(n+4),
+    &[data-total-value='3'] .feedback__star:nth-child(n+3),
+    &[data-total-value='4'] .feedback__star:nth-child(n+2),
+    &[data-total-value='5'] .feedback__star:nth-child(n+1){
+      path.inner{
+        fill: $orange;
+      }
+      path.border{
+        fill: $orange;
+      }
+    }
+  }
+  &__star{
+    cursor: pointer;
+    path.inner{
+      fill: none
+    }
+    path.border{
+      fill: #979797;
+    }
+    &:hover,
+    &:hover ~ &{
+      path.inner,
+      path.border{
+        fill: $orange;
+      }
+    }
+    
+  }
+  
+  @media screen and (max-width: map-get($breakpoints, small)){
+    margin-top: 5px;
+    &__title{
+      margin-bottom: 15px;
+    }
+    &__stars{
+      margin-bottom: 20px;
+    }
+  }
+}

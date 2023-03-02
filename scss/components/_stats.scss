@@ -1,0 +1,23 @@
+@use '../abstracts/variables'as *;
+@use '../base/typography'as *;
+
+
+
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 20px;
+
+  &__disable {
+    display: none;
+  }
+
+  p {
+    font-size: 2rem;
+    font-family: 'Arial';
+  }
+
+ 
+}

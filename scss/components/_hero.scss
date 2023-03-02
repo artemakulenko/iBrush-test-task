@@ -1,0 +1,158 @@
+@use '../abstracts/variables'as *;
+
+.hero {
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    overflow: hidden;
+  }
+
+  &__date{
+    position: absolute;
+    top: 13px;
+    left: 20px;
+    padding: 24px 29px 22px;
+    background: $white;
+
+    font-family: 'Merriweather Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 25px;
+    text-align: center;
+
+    color: $dark-gray;
+  }
+
+  &__day{
+    font-size: 24px;
+    position: relative;
+    &::after{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 5px;
+      right: 0px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid $dark-gray;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__arrow-up{
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 9px solid #fff;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+  }
+
+  &__month{
+    font-size: 16px;
+  }
+
+  
+
+  &__image {
+    display: grid;
+    gap: 20px;
+  }
+
+  &__item{
+    margin-top: 14px;
+  }
+  &__imgwrap{
+    position: relative;
+  }
+
+  &__caption {
+    font-family: 'Arial';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: $third-dark-blue;
+  }
+
+  &__title {
+    color: $light-blue;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      flex-grow: 1;
+      height: 1px;
+      background: $light-gray-first;
+    }
+  }
+
+  
+  @media screen and (max-width: map-get($breakpoints, small)) {
+    &__grid{
+      gap: 40px;
+    }
+    &__item{
+      margin-top: 0;
+    }
+    .container{
+      padding-right: unset;
+    }
+    &__divider{
+      display: none;
+    }
+    &__date{
+      display: none;
+    }
+    &__arrow-up{
+      display: none;
+    }
+    &__caption {
+      grid-row: 1;
+      padding-right: 20px;
+    }
+    &__title{
+      text-shadow: none;
+      gap: 15px;
+      font-size: 2.3rem;
+      line-height: 109%;
+      padding-right: 20px;
+    }
+    &__image {
+      gap: 26px;
+    }
+    &__imgwrap{
+      padding-bottom: 15px;
+      scrollbar-width: thin;
+      overflow-x: scroll;
+      img{
+        width: unset;
+      }
+      &::-webkit-scrollbar {
+        height: 5px;
+        background-color: transparent;
+        margin-right: 20px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $light-blue;
+        margin-right: 20px;
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background-color: $light-gray-third;
+        margin-right: 20px;
+      }
+    }
+  }
+}

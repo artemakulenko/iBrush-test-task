@@ -1,0 +1,47 @@
+@use '../abstracts/variables' as *;
+
+.quote{
+  margin-top: 10px;
+  &__grid{
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    margin-top: 21px;
+    gap: 30px;
+  }
+  &__item{
+    font-family: 'OpenSans Italic';
+    font-style: italic;
+    font-weight: 400;
+    &:nth-child(2){
+      grid-column: 2 / -1;
+    }
+  }
+  &__text{
+    font-size: 18px;
+    line-height: 133%;
+    color: $dark-gray;
+    margin-top: 9px;
+  }
+  &__author{
+    font-size: 16px;
+    line-height: 150%;
+    color: $gray;
+    margin-top: 30px;
+  }
+
+  @media screen and (max-width: map-get($breakpoints, small)){
+    margin-top: 9px;
+    &__grid{
+      margin-top: 12px;
+      gap: 15px;
+    }
+    &__text{
+      margin-top: 8px;
+      font-size: 1.4rem;
+    }
+    &__author{
+      font-size: 1.4rem;
+      margin-top: 20px;
+    }
+  }
+}

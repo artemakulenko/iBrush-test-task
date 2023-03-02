@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as *;
+
+.container{
+  max-width: 778px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-content{
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  min-height: 100dvh;
+  min-height: 100vh;
+  padding: 80px 0 75px;
+  @media screen and (max-width: map-get($breakpoints, small)) {
+    padding: 40px 0 66px;
+    gap: 25px;
+  }
+}
+
+.bg-gray{
+  background: $light-gray-fourth;
+}

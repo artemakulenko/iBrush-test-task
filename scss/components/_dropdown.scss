@@ -1,0 +1,84 @@
+@use '../abstracts/variables'as *;
+@use '../base/typography'as *;
+
+
+.dropdown {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  &__input-hidden {
+    display: none;
+  }
+  &.error {
+    button {
+      border: 1px solid red;
+    }
+  }
+  &__button{
+    &--active {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      right: 15px;
+      transition: all .3s ease;
+      background: url('/images/arrow-down.png') no-repeat center center;
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+    }
+    &.input-ui {
+      position: relative;
+      display: block;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      padding: 10px 35px 10px 20px;      
+    }
+  }
+  &__list {
+    display: none;
+    position: absolute;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background: #FFFFFF;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+    margin-top: 10px;
+    &--visible {
+      display: block;
+    }
+    &-item {
+      cursor: pointer;
+      position: relative;
+      font-family: "Arial";
+      display: flex;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      color: $second-dark-gray;
+      align-items: center;
+      padding: 15px 5px 15px 20px;
+      &:hover {
+        background: $light-gray-fourth;
+        &::before {
+          content: '';
+          width: 7px;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background-color: $light-blue;
+        }
+    
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+$black: #000;
+$dark-gray: #1a1a1a;
+$second-dark-gray: #222222;
+$third-dark-blue: #202326;
+$dark-orange: #272522;
+
+$gray: #777777;
+$gray-second: #7f7f7f;
+$gray-third: #979797;
+
+
+$light-gray-first: #dbdbdb;
+$light-gray-second: #dcdcdc;
+$light-gray-third:  #e6e6e6;
+$light-gray-fourth: #ededed;
+$white: #fff;
+
+$light-blue: #0062ff;
+$blue: #0035ff;
+$orange: #ffb400;
+
+/*
+  Здесь много *практически* одинаковых цветов - в реальных условиях я счел бы это ошибкой и пошел за уточнениями к дизайнеру, но сейчас предлагаю отталкиваться от того что это не ошибка и так оно и задумано :)
+*/
+
+
+
+
+
+
+
+
+
+
+$fonts:(
+  Consolas:(
+    Regular: true,
+    Bold: true,
+  ),
+  Helvetica:(
+    Regular: true,
+  ),
+  Merriweather:(
+    Regular: true,
+  ),
+  OpenSans:(
+    Italic: true,
+  ),
+  SegoeUI: (
+    Regular: true,
+  )
+);
+
+ 
+
+$breakpoints: (
+  small: 767px,
+  large: 768px
+);

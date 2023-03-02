@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as *;
+
+
+.swiper{
+  &__image{
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  &__title{
+    margin-top: 12px;
+    font-family: 'Consolas';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 133%;
+    color: $dark-orange;
+  }
+
+  &-pagination{
+    position: static;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  &-pagination-bullet{
+    width: 10px;
+    height: 10px;
+  }
+  &-pagination-bullet-active{
+    width: 15px;
+    height: 15px;
+  }
+}

@@ -1,0 +1,6 @@
+@use '../abstracts/variables' as *;
+
+.divider{
+  height: 1px;
+  background: $light-gray-second;
+}
